@@ -2,14 +2,15 @@
 
 import os
 import zipfile
+import smtplib
+import json
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.mime.text import MIMEText
-import smtplib
-import pathlib
 from datetime import datetime
-import json
 
+
+ConfFile = r"/Users/ttjb1/Downloads/python_project/config_sample.json"
 Dir = r"/Users/ttjb1/Downloads/python_project/demo_files/"
 Ext = r".txt"
 #OFile = 'filename10_test.zip'
@@ -106,7 +107,7 @@ def send_mail():
     smtp_obj.sendmail(msg['From'], msg["To"].split(","), msg.as_string())
     smtp_obj.quit()
 
-with open(r"/Users/ttjb1/Downloads/python_project/config_sample.json", 'r') as f:
+with open(ConfFile, 'r') as f:
     config = json.load(f)
 MESSAGE_BODY = config['MESSAGE_BODY']
 EMAIL_SUBJECT = config['EMAIL_SUBJECT']
