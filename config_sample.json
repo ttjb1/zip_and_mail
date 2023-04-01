@@ -1,0 +1,10 @@
+{
+"MESSAGE_BODY": "", 
+"EMAIL_SUBJECT": "", 
+"EMAIL_FROM": "", 
+"EMAIL_TO": "", 
+"SMTP_SERVER": "", 
+"SMTP_PORT": "", 
+"SMTP_USERNAME": "", 
+"SMTP_PASSWORD": ""
+}
