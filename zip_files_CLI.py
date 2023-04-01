@@ -53,21 +53,33 @@ def zip_dir_without_ext(Dir, OFile):
     #list_files = [os.path.join(Dir, _) for _ in os.listdir(Dir) if _.endswith(Ext)]
     list_files = [os.path.join(_) for _ in os.listdir(Dir)]
     #print(list_files)
-    while list_files:
-        os.chdir(Dir)
-        with zipfile.ZipFile(OFile, 'w') as zipF:
-            for file in list_files:
-                zipF.write(file, compress_type=zipfile.ZIP_DEFLATED)
+    os.chdir(Dir)
+    with zipfile.ZipFile(OFile, 'w') as zipF:
+        for file in list_files:
+            zipF.write(file, compress_type=zipfile.ZIP_DEFLATED)
  
         file_for_email = os.path.join(Dir, OFile)
         return(file_for_email)
-    else:
-        print("no files in the specified folder")
+
+
+def zip_dir_without_ext_absolute_path(Dir, OFile):
+    
+    list_files = [os.path.join(Dir, _) for _ in os.listdir(Dir)]
+    #list_files = [os.path.join(_) for _ in os.listdir(Dir)]
+    #print(list_files)
+    os.chdir(Dir)
+    with zipfile.ZipFile(OFile, 'w') as zipF:
+        for file in list_files:
+            zipF.write(file, compress_type=zipfile.ZIP_DEFLATED)
+ 
+        file_for_email = os.path.join(Dir, OFile)
+        return(file_for_email)
 
 #zip_dir(r"/Users/ttjb1/Downloads/python_project/demo_files/", r".xxx", 'filename.zip')
 #zip_dir_with_ext(Dir, Ext, OFile)
 #zip_dir_with_ext_absolute_path(Dir, Ext, OFile)
-zip_dir_without_ext(Dir, OFile)
+#zip_dir_without_ext(Dir, OFile)
+zip_dir_without_ext_absolute_path(Dir, OFile)
 
 # def send_mail():
 #     # Create a multipart message
