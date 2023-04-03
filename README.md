@@ -70,6 +70,6 @@
  
  - zip_and_mail.py -f <filename.zip> -t <txt> -a -c </path/to/config/file> </path/to/folder/you/want/to/zip>  
   
-  Результат:
+    Результат:
   
     В директории </path/to/folder/you/want/to/zip> создан файл <filename.zip>, содержищий файлы с расширением .txt из указанной директории. Архив содержит   абсолютный путь к файлам. Архив будет отправлен по Email в соответствии с параметрами, указанными в конфигурационном файле
