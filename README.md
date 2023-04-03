@@ -3,6 +3,8 @@
 
 ### Использование:
 
+**Для корректной работы решения необходимо использовать полный путь до директории, которую планируем архивировать**
+
 *zip_and_mail.py [-f <output_file_name>] [-t <file_type>] [-a] [-e <path/to/email/config/file>]  </path/to/folder/you/want/to/zip>*
 
 ### Общая информация
