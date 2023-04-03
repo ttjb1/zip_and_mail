@@ -1,7 +1,7 @@
 # zip_and_mail
 ## Инструкция по эксплуатации
 
-### Usage:
+### Использование:
 
 zip_and_mail.py [-f <output_file_name>] [-t <file_type>] [-a] [-e <path/to/email/config/file>]  </path/to/folder/you/want/to/zip>
 
@@ -30,7 +30,8 @@ zip_and_mail.py [-f <output_file_name>] [-t <file_type>] [-a] [-e <path/to/email
   "SMTP_PASSWORD": "" -- Пароль (необходимо использовать "пароль приложения")  
 
 
-
+#### Тест кейсы
+- Для облегчения проверки в поставке присутствует файл demo_files.zip, содержащий тестовую дироекторию с файлами разного типа и субдиректорями.
 
 
 
