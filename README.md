@@ -44,31 +44,31 @@
 
 
 #### Примеры использования:
-- zip_and_mail.py </path/to/folder/you/want/to/zip>  
+- *zip_and_mail.py </path/to/folder/you/want/to/zip>*  
   
   Результат:
   
   В директории </path/to/folder/you/want/to/zip> создан файл <YYYYMMDD-HHmmss.zip>, содержищий всю директорию (включая субдиректории)
 
-- zip_and_mail.py -f <filename.zip> </path/to/folder/you/want/to/zip>  
+- *zip_and_mail.py -f <filename.zip> </path/to/folder/you/want/to/zip>*  
   
   Результат:
   
   В директории </path/to/folder/you/want/to/zip> создан файл <filename.zip>, содержищий всю директорию (включая субдиректории)
 
-- zip_and_mail.py -f <filename.zip> -t <txt> </path/to/folder/you/want/to/zip>  
+- *zip_and_mail.py -f <filename.zip> -t <txt> </path/to/folder/you/want/to/zip>*  
   
   Результат:
   
   В директории </path/to/folder/you/want/to/zip> создан файл <filename.zip>, содержищий файлы с расширением .txt из указанной директории
  
-- zip_and_mail.py -f <filename.zip> -t <txt> -a </path/to/folder/you/want/to/zip>  
+- *zip_and_mail.py -f <filename.zip> -t <txt> -a </path/to/folder/you/want/to/zip>*  
   
   Результат:
   
   В директории </path/to/folder/you/want/to/zip> создан файл <filename.zip>, содержищий файлы с расширением .txt из указанной директории. Архив содержит абсолютный путь к файлам
  
- - zip_and_mail.py -f <filename.zip> -t <txt> -a -c </path/to/config/file> </path/to/folder/you/want/to/zip>  
+ - *zip_and_mail.py -f <filename.zip> -t <txt> -a -c </path/to/config/file> </path/to/folder/you/want/to/zip>*  
   
     Результат:
   
