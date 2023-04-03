@@ -13,7 +13,6 @@ from email.mime.text import MIMEText
 
 # ZIP files with specisied extention
 def zip_dir_with_ext(Dir, Ext, OFile):
-    print('EXT NO ABS')
     list_files = [os.path.join(_) for _ in os.listdir(Dir) if _.endswith(Ext)]
     while list_files:
         os.chdir(Dir)
@@ -27,7 +26,6 @@ def zip_dir_with_ext(Dir, Ext, OFile):
 
 # ZIP files with specisied extention and with absolute path
 def zip_dir_with_ext_absolute_path(Dir, Ext, OFile):
-    print('EXT WITH ABS')
     list_files = [os.path.join(Dir, _) for _ in os.listdir(Dir) if _.endswith(Ext)]
     while list_files:
         os.chdir(Dir)
@@ -40,8 +38,7 @@ def zip_dir_with_ext_absolute_path(Dir, Ext, OFile):
         print("no ", Ext, "files in the specified folder")
 
 # ZIP directory
-def zip_dir_without_ext(Dir, OFile):  
-    print('NO EXT NO ABS')  
+def zip_dir_without_ext(Dir, OFile):   
     #list_files = [os.path.join(_) for _ in os.listdir(Dir)]
     with zipfile.ZipFile(OFile, 'w') as zipF:
         for root, dirs, files in os.walk(Dir):
@@ -54,8 +51,7 @@ def zip_dir_without_ext(Dir, OFile):
         return(file_for_email)
 
 # ZIP directory with absolute path    
-def zip_dir_without_ext_absolute_path(Dir, OFile):
-    print('NO EXT WITH ABS')  
+def zip_dir_without_ext_absolute_path(Dir, OFile): 
     with zipfile.ZipFile(OFile, 'w') as zipF:
         for root, dirs, files in os.walk(Dir):
             for file in files:
@@ -152,34 +148,26 @@ if config:
         if Abs == True:
             PATH_TO_ZIP_FILE = zip_dir_with_ext_absolute_path(Dir, Ext, OFile)
             send_mail()
-            print('SENDMAIL_zip_dir_with_ext_absolute_path(Dir, Ext, OFile)')
         else:
             PATH_TO_ZIP_FILE = zip_dir_with_ext(Dir, Ext, OFile)
             send_mail()
-            print('SENDMAIL_zip_dir_with_ext(Dir, Ext, OFile)')
     else:
         if Abs == True:
             PATH_TO_ZIP_FILE = zip_dir_without_ext_absolute_path(Dir, OFile)
             send_mail()
-            print('SENDMAIL_zip_dir_without_ext_absolute_path(Dir, OFile)')
         else:
             PATH_TO_ZIP_FILE = zip_dir_without_ext(Dir, OFile)
             send_mail()
-            print('SENDMAIL_zip_dir_without_ext(Dir, OFile)')
 else:
     if Ext:
         if Abs == True:
             zip_dir_with_ext_absolute_path(Dir, Ext, OFile)
-            print('zip_dir_with_ext_absolute_path(Dir, Ext, OFile)')
         else:
             zip_dir_with_ext(Dir, Ext, OFile)
-            print('zip_dir_with_ext(Dir, Ext, OFile)')
     else:
         if Abs == True:
             zip_dir_without_ext_absolute_path(Dir, OFile)
-            print('zip_dir_without_ext_absolute_path(Dir, OFile)')
         else:
             zip_dir_without_ext(Dir, OFile)
-            print('zip_dir_without_ext(Dir, OFile)')
 
 
