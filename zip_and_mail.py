@@ -39,13 +39,10 @@ def zip_dir_with_ext_absolute_path(Dir, Ext, OFile):
 
 # ZIP directory
 def zip_dir_without_ext(Dir, OFile):   
-    #list_files = [os.path.join(_) for _ in os.listdir(Dir)]
     with zipfile.ZipFile(OFile, 'w') as zipF:
         for root, dirs, files in os.walk(Dir):
             for file in files:
                 zipF.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), Dir))
-            # for directory in dirs:
-            #     zipF.write(os.path.join(root, directory), os.path.relpath(os.path.join(root, file), compress_type=zipfile.ZIP_DEFLATED))
         subprocess.call("mv %s %s" % (OFile, Dir), shell=True)
         file_for_email = os.path.join(Dir, OFile)
         return(file_for_email)
@@ -75,7 +72,6 @@ def send_mail():
     # open and read the file in binary
     with open(PATH_TO_ZIP_FILE,'rb') as file:
     # Attach the file with filename to the email
-        #msg.attach(MIMEApplication(file.read(), Name = FILE_NAME))
         msg.attach(MIMEApplication(file.read(), Name = OFile))
     # Create SMTP object
     smtp_obj = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
